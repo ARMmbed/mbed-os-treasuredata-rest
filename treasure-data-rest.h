@@ -31,7 +31,7 @@ class TreasureData_RESTAPI {
 
 public:
 
-	TreasureData_RESTAPI(NetworkInterface* aNetwork,char* aDatabase, char* aTable, const char *aAPIKey){
+	TreasureData_RESTAPI(NetworkInterface* aNetwork, const char* aDatabase, const char* aTable, const char *aAPIKey){
 		apikey 		= aAPIKey;
 		network 	= aNetwork;
 		table 		= aTable;
@@ -93,8 +93,8 @@ private:
 	NetworkInterface* network;
 	const char * apikey;
 	char apikeybuff[50];
-	char * table;
-	char * database;
+	const char * table;
+	const char * database;
 	char urlbuff [URL_SIZE];	// use for URL
 
 #if TD_DEBUG
